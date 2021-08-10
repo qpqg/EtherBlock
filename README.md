@@ -5,7 +5,7 @@ untuk digunakan. Price diambel berdasarkan Price USDT Yang tersedia dalam Blockc
 # Example
 
 ```python
-from blockchain.EtherBlock import BinanceSmartChain, PolygonScan, Ethereum
+from blockchain.EtherBlock import BinanceSmartChain, PolygonScan
 print("Binance SmartChain")
 sc = "0xcE8b739b3f1624D359e5F8E9ea72A826f1d48178"
 bsc = BinanceSmartChain(sc)
