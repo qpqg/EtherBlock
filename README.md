@@ -1,4 +1,4 @@
-# BinanceSmartChain API
+# BlockChain API
 
 Api yang sengaja dibuat untuk mengambil Info Token dari BlockChain BinanceChain, yang sangat simple
 untuk digunakan. Price diambel berdasarkan Price USDT Yang tersedia dalam Blockchain BSC sendiri "Jika ada" 
