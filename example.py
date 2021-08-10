@@ -1,4 +1,3 @@
-# from libs.getprice import SmartChain
 from blockchain.EtherBlock import BinanceSmartChain, PolygonScan, Ethereum
 print("Binance SmartChain")
 sc = "0xcE8b739b3f1624D359e5F8E9ea72A826f1d48178"
