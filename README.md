@@ -28,5 +28,3 @@ Polygon Scan
 
 [Program finished]
 ```
-untuk nilai yang ada pada 'price_bnb' diambil dari Api PancakeSwap, perubahan data price diambil setiap 5 menit.
-
