@@ -3,22 +3,22 @@ from libs.getprice import Blockchain
 class EtherBlock(Blockchain):
     def __init__(self, url):
         super(EtherBlock, self).__init__(url)
-        self.tokenize = {"wallet": url.split("/")[-1], "token": []}
-        self.get_table_token()
+        self._tokenize = {"wallet": url.split("/")[-1], "token": []}
+        self._get_table_token()
 
     def gettotal(self):
-        return (len(self.tokenize.get("token")))
+        return (len(self._tokenize.get("token")))
 
     def getJson(self):
-        return self.tokenize
+        return self._tokenize
 
     def getWallet(self):
-        return self.tokenize.get("wallet")
+        return self._tokenize.get("wallet")
 
     def getToken(self):
-        return self.tokenize.get("token")
+        return self._tokenize.get("token")
 
-    def get_table_token(self):
+    def _get_table_token(self):
         listtoken = self._get_parser().find("ul", {"class": "list list-unstyled mb-0"})
         if(listtoken):
             token_list = listtoken.find_all_next("a", {"class":"link-hover d-flex justify-content-between align-items-center"})
@@ -40,7 +40,7 @@ class EtherBlock(Blockchain):
                         "jumlah_token": f"{token_value}",
                         "usd": f"{price}"
                 }
-                self.tokenize.get("token").append(format_save)
+                self._tokenize.get("token").append(format_save)
 
 class PolygonScan(EtherBlock):
     def __init__(self, address_wallet):
