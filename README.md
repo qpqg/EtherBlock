@@ -7,8 +7,8 @@ Ini masih dalam tahap pengembangan, saya harap ada yang dapat memberikan kontrib
 # Requiriments
 
 All Python 3
-- bs4
-- requests
+- pip install bs4
+- pip install requests
 
 # Example
 
