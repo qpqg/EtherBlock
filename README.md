@@ -4,6 +4,12 @@ Api Scrape yang sengaja dibuat untuk mengambil Info Token dari address wallet us
 untuk digunakan.
 Ini masih dalam tahap pengembangan, saya harap ada yang dapat memberikan kontribusi dalam Project ini.
 
+# Requiriments
+
+All Python 3
+- bs4
+- requests
+
 # Example
 
 ```python
