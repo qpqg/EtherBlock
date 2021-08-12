@@ -5,16 +5,21 @@ untuk digunakan. Price diambel berdasarkan Price USDT Yang tersedia dalam Blockc
 # Example
 
 ```python
-from blockchain.EtherBlock import BinanceSmartChain, PolygonScan
-print("Binance SmartChain")
+from blockchain.EtherBlock import BinanceSmartChain, PolygonScan, Ethereum
+print("Binance SmartChain Explorer")
 sc = "0xcE8b739b3f1624D359e5F8E9ea72A826f1d48178"
 bsc = BinanceSmartChain(sc)
 print(bsc.getToken())
 
-print("Polygon Scan")
-matic = "0xfCbAC176e8b54E6A770F7Ca16AcB51954f9A4D80"
-mitic = PolygonScan(matic)
-print(mitic.getToken())
+print("Polygon Exlorer")
+polygon_address = "0xfCbAC176e8b54E6A770F7Ca16AcB51954f9A4D80"
+polygon_explorer = PolygonScan(polygon_address)
+print(polygon_explorer.getToken())
+
+print('Ethereum explorer')
+ether_address = "0xbccf0cab5af77d4af3b30539a7c09d0307d66e57"
+ether_explorer = Ethereum(ether_address)
+print(ether_explorer.getToken())
 
 ```
 output
@@ -28,3 +33,220 @@ Polygon Scan
 
 [Program finished]
 ```
+# PancakeSwap API for BinanceSmartChain (Bsc)
+```Python
+from libs.getprice import PancakeSwap
+from blockchain.EtherBlock import BinanceSmartChain
+
+print("Binance SmartChain Explorer")
+bsc_market = PancakeSwap()
+sc = "0xcE8b739b3f1624D359e5F8E9ea72A826f1d48178"
+bsc = BinanceSmartChain(sc)
+
+for myjson in bsc.getToken():
+  contract_address_token = myjson.get('contract')
+  token_name = myjson.get('nama')
+  symb = myjson.get('symbol')
+  value_token = myjson.get("jumlah_token")
+  bsc_market.setToken(contract_address_token)
+  print(f"Name: {token_name}\r\Values: {value_token} {symb}\PancakeSwap Price: {bsc_market.getprice_BNB()}")
+```
+OUTPUT
+```
+Binance SmartChain Explorer
+Name: DeFi For You... (DFY)
+Values: 2.42 DFY
+PancakeSwap Price: 0.0002915283299311617908843660320057
+
+Name: Spore (SPORE)
+Values: 2,920,837,050.80414 SPORE
+PancakeSwap Price: 0.0000000000003139460655345544872405386104685
+
+Name: Agrinoble (AGN)
+Values: 10,900 AGN
+PancakeSwap Price: Tidak Ada price_BNB
+
+Name: ALPACAFIN.CO... (ALPACA)
+Values: 28,102,000 ALPACA
+PancakeSwap Price: 0.0000001867870353453604727112897002711
+
+Name: Automata (ATA)
+Values: 50 ATA
+PancakeSwap Price: 0
+
+Name: Baby Doge Co... (BabyDo...)
+Values: 252,291,809.868527 BabyDoge
+PancakeSwap Price: 0.000000000003873562911286853684584744679853
+
+Name: Beer Money (BEER)
+Values: 3 BEER
+PancakeSwap Price: 0.00005641793837173952139084343897413
+
+Name: BITCHIP (CHIP)
+Values: 2,850,000,000 CHIP
+PancakeSwap Price: 0
+
+Name: BNBL TOKEN (BNBL)
+Values: 50 BNBL
+PancakeSwap Price: 0
+
+Name: ChesterCoin (CTRFI)
+Values: 14,766,732,003.9107 CTRFI
+PancakeSwap Price: 0.00000000000002044491622101088392370074923166
+
+Name: Corgi doge (CORGI)
+Values: 105,000 CORGI
+PancakeSwap Price: 0.000000002061532915214885479759148061752
+
+Name: Crox Token (CROX)
+Values: 2.25172299 CROX
+PancakeSwap Price: 0.000305368632209768343105533760657
+
+Name: Ether2 (ETHER2)
+Values: 250,000,000 ETHER2
+PancakeSwap Price: 0
+
+Name: Fire Protoco... (FPF)
+Values: 32 FPF
+PancakeSwap Price: Tidak Ada price_BNB
+
+Name: FishSwap (FISH)
+Values: 11 FISH
+PancakeSwap Price: 0
+
+Name: GoFlux.io (FLUX)
+Values: 950,000 FLUX
+PancakeSwap Price: 0.000416409388845074495909908492078
+
+Name: Gold Bee (GBE)
+Values: 169.32302137 GBE
+PancakeSwap Price: 0
+
+Name: HelloSwap To... (HELLO)
+Values: 5,200 HELLO
+PancakeSwap Price: 0
+
+Name: Investelly (INVEST...)
+Values: 10 INVESTEL
+PancakeSwap Price: 0.00001009484233635546445626634459038
+
+Name: Koda Robot D... (KODA)
+Values: 1,532,286.80001067 KODA
+PancakeSwap Price: 0
+
+Name: Lindalit BSC (LINDA)
+Values: 0.00087591 LINDA
+PancakeSwap Price: 0
+
+Name: Lock Chain F... (LOCKCH...)
+Values: 2,750,000 LOCKCHAIN
+PancakeSwap Price: 0
+
+Name: Medical Veda (MVEDA)
+Values: 3,500,000 MVEDA
+PancakeSwap Price: 0
+
+Name: Minereum BSC (MNEB)
+Values: 150,000 MNEB
+PancakeSwap Price: 0.0002061517148775796939859801715223
+
+Name: Moon Chain (MCF)
+Values: 1,000,000 MCF
+PancakeSwap Price: 0.000000000001711296200685053429767876006837
+
+Name: Moon Stake (MSEF)
+Values: 20,000 MSEF
+PancakeSwap Price: 0
+
+Name: Nyan Cat Tok... (NCAT)
+Values: 42,529,631.3077643 NCAT
+PancakeSwap Price: 0
+
+Name: Poodledog To... (POODLE)
+Values: 25 POODLE
+PancakeSwap Price: 0
+
+Name: SAFE MERCURY (SMRCY)
+Values: 1,188,841.64349208 SMRCY
+PancakeSwap Price: 0
+
+Name: Safe Nebula (SNB)
+Values: 250,000,000 SNB
+PancakeSwap Price: 0
+
+Name: SafeGas (SAFEGA...)
+Values: 49,000 SAFEGAS
+PancakeSwap Price: 0
+
+Name: SafeUniverse... (SAFUV2)
+Values: 28,090,208.8628864 SAFUV2
+PancakeSwap Price: 0
+
+Name: Suntrust Fin... (SUNT)
+Values: 1,400 SUNT
+PancakeSwap Price: 0
+
+Name: TeaCrypto Fi... (TCF)
+Values: 2,000,000 TCF
+PancakeSwap Price: 0
+
+Name: TheEver.io (EVER)
+Values: 800,000 EVER
+PancakeSwap Price: 0.000271976832668170770323726602572
+
+Name: TheVera.io (VERA)
+Values: 800,000 VERA
+PancakeSwap Price: 0.000379399747873644752442549176166
+
+Name: Ulink Financ... (ULK)
+Values: 7,500,000 ULK
+PancakeSwap Price: 0
+
+Name: Ultraman Tok... (UMAN)
+Values: 479,900.00808616 UMAN
+PancakeSwap Price: 0.000000000144765487228508541018833519548
+
+Name: VANCAT Token (VANCAT)
+Values: 41,523,853 VANCAT
+PancakeSwap Price: 0.00000000001196168722704529515043716690936
+
+Name: VANCATDOG (VANCAT...)
+Values: 150,000,000,000 VANCATDOG
+PancakeSwap Price: 0
+
+Name: VDSB Token (VDSB)
+Values: 1,000,000 VDSB
+PancakeSwap Price: 0
+
+Name: VERGE (XVG)
+Values: 1,000 XVG
+PancakeSwap Price: Tidak Ada price_BNB
+
+Name: WAIVLENGTH (WAIV)
+Values: 1,240,189,208.55629 WAIV
+PancakeSwap Price: 0.000000000001605406255338604963104782772103
+
+Name: Wall Street ... (WSG)
+Values: 500,000 WSG
+PancakeSwap Price: 0.0000000002336748686073267023493636979548
+
+Name: wDogecoin (wDOGE)
+Values: 300,000 wDOGE
+PancakeSwap Price: 0.0000000000122746988603025853240324256506
+
+Name: XMAGNET (XMAG)
+Values: 1.25 XMAG
+PancakeSwap Price: 0
+
+Name: YOOSHI (YOOSHI)
+Values: 10,000 YOOSHI
+PancakeSwap Price: 0.0000000003509754844784882040743473678856
+
+
+Process finished with exit code 0
+```
+
+# Keterangan
+
+0 = tidak ada liquidity yang tersedia pada token
+Tidak Ada price_BNB = Token Belum di Approve
