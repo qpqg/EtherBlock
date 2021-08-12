@@ -1,7 +1,8 @@
 # BlockChain API
 
-Api yang sengaja dibuat untuk mengambil Info Token dari BlockChain BinanceChain dan PolyGon, yang sangat simple
-untuk digunakan. Price diambel berdasarkan Price USDT Yang tersedia dalam Blockchain itu sendiri "Jika ada".
+Api yang sengaja dibuat untuk mengambil Info Token dari address wallet user kepada BlockChain, yang sangat simple
+untuk digunakan.
+
 # Example
 
 ```python
