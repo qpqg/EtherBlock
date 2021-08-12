@@ -1,7 +1,8 @@
 # BlockChain API
 
-Api yang sengaja dibuat untuk mengambil Info Token dari address wallet user kepada BlockChain, yang sangat simple
+Api Scrape yang sengaja dibuat untuk mengambil Info Token dari address wallet user kepada BlockChain, yang sangat simple
 untuk digunakan.
+Ini masih dalam tahap pengembangan, saya harap ada yang dapat memberikan kontribusi dalam Project ini.
 
 # Example
 
