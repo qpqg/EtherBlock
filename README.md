@@ -253,7 +253,7 @@ Process finished with exit code 0
 0 = tidak ada liquidity yang tersedia pada token
 Tidak Ada price_BNB = Token Belum di Approve
 
-#Install Only Library
+# Untuk hanya menginstall library
 ```Python
 pip install EtherBlockchain
 ``
