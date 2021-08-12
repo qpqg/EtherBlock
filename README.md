@@ -33,7 +33,9 @@ Polygon Scan
 
 [Program finished]
 ```
-# PancakeSwap API for BinanceSmartChain (Bsc)
+# PancakeSwap API for BinanceSmartChain (Bsc) 
+This api refresh price always 5 minute
+
 ```Python
 from libs.getprice import PancakeSwap
 from blockchain.EtherBlock import BinanceSmartChain
@@ -49,7 +51,7 @@ for myjson in bsc.getToken():
   symb = myjson.get('symbol')
   value_token = myjson.get("jumlah_token")
   bsc_market.setToken(contract_address_token)
-  print(f"Name: {token_name}\r\Values: {value_token} {symb}\PancakeSwap Price: {bsc_market.getprice_BNB()}")
+  print(f"Name: {token_name}\nValues: {value_token} {symb}\nPancakeSwap Price: {bsc_market.getprice_BNB()}\r\n")
 ```
 OUTPUT
 ```
@@ -250,3 +252,8 @@ Process finished with exit code 0
 
 0 = tidak ada liquidity yang tersedia pada token
 Tidak Ada price_BNB = Token Belum di Approve
+
+#Install Only Library
+```Python
+pip install EtherBlockchain
+``
