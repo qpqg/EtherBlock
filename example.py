@@ -1,16 +1,18 @@
-from QiubyZEtherChain.EtherBlock import BinanceSmartChain, PolygonScan, Ethereum
+from QiubyZEtherChain.libs.getprice import PancakeSwap
+from QiubyZEtherChain.EtherBlock import BinanceSmartChain
+
 print("Binance SmartChain Explorer")
+bsc_market = PancakeSwap()
 sc = "0xcE8b739b3f1624D359e5F8E9ea72A826f1d48178"
+
 bsc = BinanceSmartChain(sc)
-print(bsc.getToken())
 
-print("Polygon Exlorer")
-polygon_address = "0xfCbAC176e8b54E6A770F7Ca16AcB51954f9A4D80"
-polygon_explorer = PolygonScan(polygon_address)
-print(polygon_explorer.getToken())
-
-print('Ethereum explorer')
-ether_address = "0xbccf0cab5af77d4af3b30539a7c09d0307d66e57"
-ether_explorer = Ethereum(ether_address)
-print(ether_explorer.getToken())
-
+for myjson in bsc.getToken():
+  contract_address_token = myjson.get('contract')
+  token_name = myjson.get('nama')
+  symb = myjson.get('symbol')
+  value_token = myjson.get("jumlah_token")
+  bsc_market.setToken(contract_address_token)
+  price_pancakce = bsc_market.getprice_BNB()
+  switch_case = {"Tidak Ada price_BNB":"No Liquidity", "0":"Required Approve"}.get(price_pancakce) or price_pancakce
+  print(f"Name: {token_name}\nValues: {value_token} {symb}\nPancakeSwap Price: {switch_case}\nContract Address: {contract_address_token}\r\n")
