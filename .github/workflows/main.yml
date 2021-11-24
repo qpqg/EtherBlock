@@ -4,7 +4,6 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -16,6 +15,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
+      - name: Install requirements.txt
+        run: pip install -r requirements.txt
       - name: Test with pytest
-        run: |
-          python example.py
+        run: python example.py
